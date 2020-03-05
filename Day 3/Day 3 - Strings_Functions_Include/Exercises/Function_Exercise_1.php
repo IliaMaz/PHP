@@ -117,6 +117,16 @@ function palindrome($string)
 }
 
 echo palindrome($word);
+//! One of the better solutions:
+function palindromeB($string)
+{
+	$len = strlen($string) - 1;
+
+	for ($i = 0; $i < $len - $i; $i++) {
+		if ($string[$i] != $string[$len - $i]);
+	}
+}
+
 /*
 -- Exercice 4
 

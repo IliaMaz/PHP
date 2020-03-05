@@ -1,0 +1,6 @@
+username:BananaInTheBox
+mail:banana@gmail.com
+phone:+33234234234
+password:1234
+preference:hat/shoes
+session_id:0123SESSIONID
