@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <?php
+    <?php // ! Bug out with the reset because of: Confirm Resubmission
     session_start();
     var_dump($_SESSION);
     // ! date(d, M, Y);
@@ -22,11 +22,15 @@
     visited();
     if (isset($_POST['submit'])) {
         $_SESSION['visited'] = 0;
-        unset($_POST['submit']);
-        var_dump($_POST);
+        session_unset();
+        if (!isset($_SESSION['first_visit'])) {
+            $_SESSION['first_visit'] = date('d/M/Y');
+        }
         visited();
     }
+    session_destroy(); // ! clearing session array for other ex, comment out for code functionality
     ?>
+
     <form action="" method="post">
         <input type="submit" value="RESET" name="submit">
     </form>
