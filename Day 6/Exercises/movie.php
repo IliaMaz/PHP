@@ -1,6 +1,6 @@
 <?php
 include_once '../database.php';
-
+// ? Setup sql, query and var
 // ! Display movies ordered by date of release
 $connectDB = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, 'moviedb');
 if (isset($_GET['id'])) {
@@ -24,6 +24,7 @@ $image = $row['poster_image'];
 
 <body>
     <?php
+    // ? Show image picture cand info
     if (!empty($image))
         echo '<img src="' . $image . '">' . '<br>';
     echo $row['title'] . ' released on ' . $row['date_of_release'] . '<br>' . 'Directed by: ' . $row['name'];
