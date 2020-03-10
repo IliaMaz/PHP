@@ -1,6 +1,6 @@
 <?php
-	
-	/*
+
+/*
 		The purpose of this exercise is to create a login/register process for users.
 		In this case, administrators.
 		
@@ -28,5 +28,3 @@
 		To do that, create a session value to remember the user is connected.
 
 	*/
-
-?>
