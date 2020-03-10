@@ -34,9 +34,11 @@ $connect = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, 'user_system');
         // * Read the password value and verify it
         $hashedPassword = $row['password'];
         $passValidation = password_verify($password, $hashedPassword);
-        if ($passValidation)
-            echo 'Login success!';
-        else
+        if ($passValidation) {
+            echo '<a href="edit-myaccount.php">Login success! Edit your account.</a>';
+            session_start();
+            setcookie('id', $row['id']);
+        } else
             echo 'Wrong password or email';
     }
 
